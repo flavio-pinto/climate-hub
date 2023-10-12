@@ -1,0 +1,38 @@
+/* Comfortaa Regular */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/Comfortaa/Comfortaa-Regular.ttf') format('truetype');
+}
+
+/* Comfortaa Light */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: light;
+  font-weight: 300;
+  src: url('./assets/fonts/Comfortaa/Comfortaa-Light.ttf') format('truetype');
+}
+
+/* Comfortaa Bold */
+@font-face {
+  font-family: 'Comfortaa';
+  font-style: bold;
+  font-weight: 700;
+  src: url('./assets/fonts/Comfortaa/Comfortaa-Bold.ttf') format('truetype');
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Comfortaa', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}

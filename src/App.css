@@ -1,19 +1,19 @@
 /* Modalità Normale */
 :root {
-  --bg-col-primary: #1181B2;
+  --bg-col-primary: #28559A;
   --bg-col-secondary: #DDEDF4;
   --txt-col-primary: #DDEDF4;
-  --txt-col-secondary: #212221;
+  --txt-col-secondary: #28559A;
 }
 
 /* Dark Mode */
 body.dark-mode {
-  --bg-col-primary: #212221;
-  --bg-col-secondary: #1181B2;
+  --bg-col-primary: #0F2557;
+  --bg-col-secondary: #28559A;
   --txt-col-primary: #DDEDF4;
   --txt-col-secondary: #DDEDF4;
 }
 
-body {
-  background-color: var(--bg-col-secondary);
+.appContainer {
+  height: 100vh;
 }

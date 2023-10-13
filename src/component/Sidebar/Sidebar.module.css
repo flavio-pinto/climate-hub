@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'Zai';
+  src: url('../../assets/fonts/Zai-Stop-Climate-Change/Zai-Stop-Climate-Change.ttf') format('truetype');
+}
+
+.sidebar {
+  width: 280px;
+  margin: 10px;
+  padding: 24px;
+  border-radius: 4px;
+  background-color: var(--bg-col-primary);
+  color: var(--txt-col-primary);
+}
+
+.sidebarBrand {
+  font-size: 45px;
+  color: white;
+}
+
+.sidebarBrand h1 {
+  margin: 0;
+  font-size: 45px;
+  font-family: 'Zai';
+}
+
+.sidebarMenuItem {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.3s ease;
+}
+
+.sidebarMenuItem:hover {
+  background-color: var(--bg-col-secondary);
+}
+
+.sidebarMenuItem:hover a {
+  color: var(--txt-col-secondary);
+}
+
+.sidebarMenuItemLink {
+  text-decoration: none;
+  color: var(--txt-col-primary);
+  font-size: 20px;
+}
+
+.sidebarMenuItemLink h3 {
+  margin: 0 0 0 10px;
+  font-size: 20px;
+}

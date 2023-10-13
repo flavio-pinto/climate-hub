@@ -1,8 +1,10 @@
+/* import styles from "./Home.module.css" */
+
 /* type Props = {} */
 
 const Home: React.FC = (/* props: Props */) => {
   return (
-    <div>Home</div>
+    <div className="">Home</div>
   )
 }
 

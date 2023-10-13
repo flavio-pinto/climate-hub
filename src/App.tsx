@@ -7,14 +7,18 @@ import "normalize.css";
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./App.css";
 import Home from "./pages/Home/Home";
+import Sidebar from "./component/Sidebar/Sidebar";
 
 function App() {
   return (
-    <div className="grid-container">
+    <div className="app">
       <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
+        <div className="d-flex appContainer">
+          <Sidebar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
       </Router>
     </div>
   );

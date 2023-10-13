@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Home from "./pages/Home/Home";
+import Content from "./pages/Content/Content";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Header />
         <Sidebar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Content />} />
         </Routes>
       </Router>
     </div>

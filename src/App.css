@@ -1,31 +1,19 @@
 /* Modalità Normale */
 :root {
-  --primary-color: #F7F7F7;
-  --secondary-color: #7DA2A9;
-  --text-color: #000000;
-  --button-background-color: #000000;
-  --button-text-color: #ffffff;
+  --bg-col-primary: #1181B2;
+  --bg-col-secondary: #DDEDF4;
+  --txt-col-primary: #DDEDF4;
+  --txt-col-secondary: #212221;
 }
 
 /* Dark Mode */
 body.dark-mode {
-  --primary-color: #172D13;
-  --secondary-color: #6BB77B;
-  --text-color: #eaece9;
-  --button-background-color: #D76F30;
-  --button-text-color: #eaece9;
+  --bg-col-primary: #212221;
+  --bg-col-secondary: #1181B2;
+  --txt-col-primary: #DDEDF4;
+  --txt-col-secondary: #DDEDF4;
 }
 
 body {
-  background-color: var(--primary-color);
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 260px 1fr 1fr 1fr;
-  grid-template-rows: 0.2fr 3fr;
-  grid-template-areas:
-    'sidebar header header header'
-    'sidebar main main main';
-  height: 100vh;
+  background-color: var(--bg-col-secondary);
 }

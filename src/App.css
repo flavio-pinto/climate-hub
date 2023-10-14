@@ -17,3 +17,7 @@ body.dark-mode {
 .appContainer {
   height: 100vh;
 }
+
+.appContent {
+  width: 100%;
+}

@@ -1,0 +1,6 @@
+.header {
+  margin: 10px;
+  background-color: transparent;
+  font-size: 30px;
+  color: var(--txt-col-secondary);
+}

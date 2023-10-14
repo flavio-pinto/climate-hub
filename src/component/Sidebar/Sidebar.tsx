@@ -31,11 +31,18 @@ const Sidebar: React.FC = () => {
         {navLinks.map((link, index) => (
           <ListGroup.Item
             key={index}
-            className={`${styles.sidebarMenuItem} py-3 px-1`}
+            className={`${styles.sidebarMenuItem}`}
           >
             <NavLink
               to={link.to}
-              className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
+              //className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? `${styles.sidebarMenuItemLink} d-flex align-items-start py-3 px-1 ${styles.pending}`
+                  : isActive
+                  ? `${styles.sidebarMenuItemLink} d-flex align-items-start py-3 px-1 ${styles.active}`
+                  : `${styles.sidebarMenuItemLink} d-flex align-items-start py-3 px-1`
+              }
             >
               {link.icon}
               <h3>{link.text}</h3>

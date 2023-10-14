@@ -43,6 +43,11 @@
   font-size: 20px;
 }
 
+.sidebarMenuItemLink.active,
+.sidebarMenuItemLink.pending {
+  color: gold;
+}
+
 .sidebarMenuItemLink h3 {
   margin: 0 0 0 10px;
   font-size: 20px;

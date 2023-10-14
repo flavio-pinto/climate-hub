@@ -10,7 +10,17 @@ import { NavLink } from "react-router-dom";
 
 /* type Props = {} */
 
-const Sidebar: React.FC = (/* props: Props */) => {
+const navLinks = [
+  { to: "/", icon: <AiFillHome />, text: "Home" },
+  { to: "/temperatures", icon: <FaTemperatureFull />, text: "Temperatures" },
+  { to: "/co2", icon: <BsFillCarFrontFill />, text: "CO2" },
+  { to: "/methane", icon: <FaFireFlameCurved />, text: "Methane" },
+  { to: "/no2", icon: <GiPoisonGas />, text: "NO2" },
+  { to: "/arctic-ice", icon: <FaSnowflake />, text: "Arctic Ice" },
+  { to: "/news", icon: <BiNews />, text: "News" },
+];
+
+const Sidebar: React.FC = () => {
   return (
     <aside className={`${styles.sidebar} d-flex flex-column`}>
       <div className={`${styles.sidebarBrand} d-flex mb-4`}>
@@ -18,69 +28,20 @@ const Sidebar: React.FC = (/* props: Props */) => {
         <h1 className="ms-auto">ClimateHub</h1>
       </div>
       <ListGroup className={styles.sidebarMenu}>
-        <ListGroup.Item className={`${styles.sidebarMenuItem} py-3 px-1`}>
-          <NavLink
-            to="/"
-            className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
+        {navLinks.map((link, index) => (
+          <ListGroup.Item
+            key={index}
+            className={`${styles.sidebarMenuItem} py-3 px-1`}
           >
-            <AiFillHome />
-            <h3>Home</h3>
-          </NavLink>
-        </ListGroup.Item>
-        <ListGroup.Item className={`${styles.sidebarMenuItem} py-3 px-1`}>
-          <NavLink
-            to="/temperatures"
-            className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
-          >
-            <FaTemperatureFull />
-            <h3>Temperatures</h3>
-          </NavLink>
-        </ListGroup.Item>
-        <ListGroup.Item className={`${styles.sidebarMenuItem} py-3 px-1`}>
-          <NavLink
-            to="/co2"
-            className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
-          >
-            <BsFillCarFrontFill />
-            <h3>CO2</h3>
-          </NavLink>
-        </ListGroup.Item>
-        <ListGroup.Item className={`${styles.sidebarMenuItem} py-3 px-1`}>
-          <NavLink
-            to="/methane"
-            className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
-          >
-            <FaFireFlameCurved />
-            <h3>Methane</h3>
-          </NavLink>
-        </ListGroup.Item>
-        <ListGroup.Item className={`${styles.sidebarMenuItem} py-3 px-1`}>
-          <NavLink
-            to="/no2"
-            className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
-          >
-            <GiPoisonGas />
-            <h3>NO2</h3>
-          </NavLink>
-        </ListGroup.Item>
-        <ListGroup.Item className={`${styles.sidebarMenuItem} py-3 px-1`}>
-          <NavLink
-            to="/arctic-ice"
-            className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
-          >
-            <FaSnowflake />
-            <h3>Arctic Ice</h3>
-          </NavLink>
-        </ListGroup.Item>
-        <ListGroup.Item className={`${styles.sidebarMenuItem} py-3 px-1`}>
-          <NavLink
-            to="/news"
-            className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
-          >
-            <BiNews />
-            <h3>News</h3>
-          </NavLink>
-        </ListGroup.Item>
+            <NavLink
+              to={link.to}
+              className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
+            >
+              {link.icon}
+              <h3>{link.text}</h3>
+            </NavLink>
+          </ListGroup.Item>
+        ))}
       </ListGroup>
     </aside>
   );

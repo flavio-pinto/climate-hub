@@ -1,6 +1,16 @@
 .header {
   margin: 10px;
   background-color: var(--bg-col-secondary);
+  border-radius: 4px;
   font-size: 30px;
   color: var(--txt-col-secondary);
+}
+
+.header a {
+  color: var(--txt-col-secondary);
+  height: 30px;
+}
+
+.header a:hover {
+  color: gold;
 }

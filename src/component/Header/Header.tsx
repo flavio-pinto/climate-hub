@@ -1,8 +1,8 @@
 import { BiChevronLeft } from "react-icons/bi";
 import { BsGithub, BsLinkedin, BsCodeSquare } from "react-icons/bs";
-import Toggle from 'react-toggle'
-import 'react-toggle/style.css'
-import './DarkModeToggleOverride.css'
+import Toggle from "react-toggle";
+import "react-toggle/style.css";
+import "./DarkModeToggleOverride.css";
 import styles from "./Header.module.css";
 
 type Props = {
@@ -17,7 +17,7 @@ const Header: React.FC<Props> = (props: Props) => {
 
   return (
     <header
-      className={`${styles.header} d-flex justify-content-between align-items-center px-1 py-2`}
+      className={`${styles.header} d-flex justify-content-between align-items-center pe-3 py-2`}
     >
       <div className={`${styles.headerLeft} d-flex align-items-center`}>
         <BiChevronLeft />
@@ -31,9 +31,29 @@ const Header: React.FC<Props> = (props: Props) => {
       </div>
       <div className={`${styles.headerCenter}`}>Logo</div>
       <div className={`${styles.headerRight} d-flex align-items-center`}>
-        <BsGithub />
-        <BsLinkedin />
-        <BsCodeSquare />
+        <a
+          href="https://github.com/flavio-pinto"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <BsGithub />
+        </a>
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ms-3"
+        >
+          <BsLinkedin />
+        </a>
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ms-3"
+        >
+          <BsCodeSquare />
+        </a>
       </div>
     </header>
   );

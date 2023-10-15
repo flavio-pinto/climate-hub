@@ -7,7 +7,7 @@
 }
 
 /* Dark Mode */
-body.dark-mode {
+.app.dark-mode {
   --bg-col-primary: #0F2557;
   --bg-col-secondary: #28559A;
   --txt-col-primary: #DDEDF4;

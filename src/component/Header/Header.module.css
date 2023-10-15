@@ -1,4 +1,5 @@
 .header {
+  height: 60px;
   margin: 10px;
   background-color: var(--bg-col-secondary);
   border-radius: 4px;
@@ -25,4 +26,22 @@
 
 .headerRight a:hover {
   color: gold;
+}
+
+/* Animazione BiChevronLeft */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Applica l'animazione alle icone */
+.iconLeft {
+  animation: slideLeft 1s infinite;
 }

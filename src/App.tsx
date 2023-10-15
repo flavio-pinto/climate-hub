@@ -21,7 +21,7 @@ function App() {
         <div className={`d-flex appContainer ${sidebarOpen ? '' : 'sidebar-closed'}`}>
           <Sidebar />
           <div className="appContent">
-            <Header setDarkMode={setDarkMode} darkMode={darkMode} setSidebarOpen={setSidebarOpen} />
+            <Header setDarkMode={setDarkMode} darkMode={darkMode} setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
             <Routes>
               <Route path="/" element={<Home />} />
             </Routes>

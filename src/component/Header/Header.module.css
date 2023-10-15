@@ -6,11 +6,23 @@
   color: var(--txt-col-secondary);
 }
 
+.headerCenter {
+  height: 40px;
+  font-size: 40px;
+}
+
+.headerCenter h1 {
+  font-size: 40px;
+  margin: 0;
+  font-family: 'Zai';
+}
+
 .header a {
   color: var(--txt-col-secondary);
+  text-decoration: none;
   height: 30px;
 }
 
-.header a:hover {
+.headerRight a:hover {
   color: gold;
 }

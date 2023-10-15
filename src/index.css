@@ -22,6 +22,12 @@
   src: url('./assets/fonts/Comfortaa/Comfortaa-Bold.ttf') format('truetype');
 }
 
+/* Zai */
+@font-face {
+  font-family: 'Zai';
+  src: url('./assets/fonts/Zai-Stop-Climate-Change/Zai-Stop-Climate-Change.ttf') format('truetype');
+}
+
 html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

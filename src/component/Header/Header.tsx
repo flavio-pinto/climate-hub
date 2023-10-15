@@ -1,9 +1,10 @@
-import { BiChevronLeft } from "react-icons/bi";
+import { BiChevronLeft, BiWorld } from "react-icons/bi";
 import { BsGithub, BsLinkedin, BsCodeSquare } from "react-icons/bs";
 import Toggle from "react-toggle";
 import "react-toggle/style.css";
 import "./DarkModeToggleOverride.css";
 import styles from "./Header.module.css";
+import { NavLink } from "react-router-dom";
 
 type Props = {
   darkMode: boolean;
@@ -29,7 +30,12 @@ const Header: React.FC<Props> = (props: Props) => {
           className={`${styles.toggleIcons}`}
         />
       </div>
-      <div className={`${styles.headerCenter}`}>Logo</div>
+      <div className={`${styles.headerCenter}`}>
+        <NavLink to="/" className={`${styles.logoLink} d-flex`}>
+          <BiWorld />
+          <h1 className="ms-1">ClimateHub</h1>
+        </NavLink>
+      </div>
       <div className={`${styles.headerRight} d-flex align-items-center`}>
         <a
           href="https://github.com/flavio-pinto"
@@ -38,20 +44,10 @@ const Header: React.FC<Props> = (props: Props) => {
         >
           <BsGithub />
         </a>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ms-3"
-        >
+        <a href="#" target="_blank" rel="noopener noreferrer" className="ms-3">
           <BsLinkedin />
         </a>
-        <a
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ms-3"
-        >
+        <a href="#" target="_blank" rel="noopener noreferrer" className="ms-3">
           <BsCodeSquare />
         </a>
       </div>

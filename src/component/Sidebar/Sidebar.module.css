@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'Zai';
-  src: url('../../assets/fonts/Zai-Stop-Climate-Change/Zai-Stop-Climate-Change.ttf') format('truetype');
-}
-
 .sidebar {
   width: 280px;
   margin: 10px;

@@ -1,12 +1,12 @@
-import { BiWorld, BiNews } from "react-icons/bi";
-import { AiFillHome } from "react-icons/ai";
-import { FaTemperatureFull, FaFireFlameCurved } from "react-icons/fa6";
-import { BsFillCarFrontFill } from "react-icons/bs";
-import { GiPoisonGas } from "react-icons/gi";
-import { FaSnowflake } from "react-icons/fa";
-import styles from "./Sidebar.module.css";
-import { ListGroup } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import { BiWorld, BiNews } from "react-icons/bi"
+import { AiFillHome } from "react-icons/ai"
+import { FaTemperatureFull, FaFireFlameCurved } from "react-icons/fa6"
+import { BsFillCarFrontFill } from "react-icons/bs"
+import { GiPoisonGas } from "react-icons/gi"
+import { FaSnowflake } from "react-icons/fa"
+import styles from "./Sidebar.module.css"
+import { ListGroup } from "react-bootstrap"
+import { NavLink } from "react-router-dom"
 
 /* type Props = {} */
 
@@ -18,7 +18,7 @@ const navLinks = [
   { to: "/no2", icon: <GiPoisonGas />, text: "NO2" },
   { to: "/arctic-ice", icon: <FaSnowflake />, text: "Arctic Ice" },
   { to: "/news", icon: <BiNews />, text: "News" },
-];
+]
 
 const Sidebar: React.FC = () => {
   return (
@@ -35,7 +35,6 @@ const Sidebar: React.FC = () => {
           >
             <NavLink
               to={link.to}
-              //className={`${styles.sidebarMenuItemLink} d-flex align-items-start`}
               className={({ isActive, isPending }) =>
                 isPending
                   ? `${styles.sidebarMenuItemLink} d-flex align-items-start py-3 px-1 ${styles.pending}`
@@ -51,7 +50,7 @@ const Sidebar: React.FC = () => {
         ))}
       </ListGroup>
     </aside>
-  );
-};
+  )
+}
 
-export default Sidebar;
+export default Sidebar

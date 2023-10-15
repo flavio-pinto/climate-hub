@@ -1,27 +1,28 @@
-import { BiChevronLeft, BiWorld } from "react-icons/bi";
-import { BsGithub, BsLinkedin, BsCodeSquare } from "react-icons/bs";
-import Toggle from "react-toggle";
-import "react-toggle/style.css";
-import "./DarkModeToggleOverride.css";
-import styles from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import { BiChevronLeft, BiWorld } from "react-icons/bi"
+import { BsGithub, BsLinkedin, BsCodeSquare } from "react-icons/bs"
+import Toggle from "react-toggle"
+import "react-toggle/style.css"
+import "./DarkModeToggleOverride.css"
+import styles from "./Header.module.css"
+import { NavLink } from "react-router-dom"
 
 type Props = {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-};
+  darkMode: boolean
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
 
 const Header: React.FC<Props> = (props: Props) => {
   const toggleDarkMode = () => {
-    props.setDarkMode(!props.darkMode);
-  };
+    props.setDarkMode(!props.darkMode)
+  }
 
   return (
     <header
       className={`${styles.header} d-flex justify-content-between align-items-center pe-3 py-2`}
     >
       <div className={`${styles.headerLeft} d-flex align-items-center`}>
-        <BiChevronLeft />
+        <BiChevronLeft onClick={() => props.setSidebarOpen((open) => !open)} />
         <Toggle
           checked={props.darkMode}
           onChange={toggleDarkMode}
@@ -52,7 +53,7 @@ const Header: React.FC<Props> = (props: Props) => {
         </a>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

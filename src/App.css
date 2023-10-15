@@ -16,8 +16,13 @@
 
 .appContainer {
   height: 100vh;
+  transition: margin-left 0.3s;
 }
 
 .appContent {
   width: 100%;
+}
+
+.sidebar-closed {
+  margin-left: -280px; /* o qualsiasi sia la larghezza della Sidebar */
 }

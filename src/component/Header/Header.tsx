@@ -32,7 +32,7 @@ const Header: React.FC<Props> = (props: Props) => {
         ) : (
           <RxHamburgerMenu
             onClick={() => props.setSidebarOpen((open) => !open)}
-            className="mx-3"
+            className="mx-1 mx-md-3"
           />
         )}
         <Toggle
@@ -44,10 +44,10 @@ const Header: React.FC<Props> = (props: Props) => {
         />
       </div>
       {!props.sidebarOpen && (
-        <div className={`${styles.headerCenter} d-none d-md-flex`}>
+        <div className={`${styles.headerCenter} d-flex`}>
           <NavLink to="/" className={`${styles.logoLink} d-flex`}>
-            <BiWorld />
-            <h1 className="ms-1">ClimateHub</h1>
+            <BiWorld className="d-none d-md-block" />
+            <h1 className="ms-md-1">ClimateHub</h1>
           </NavLink>
         </div>
       )}
@@ -59,10 +59,10 @@ const Header: React.FC<Props> = (props: Props) => {
         >
           <BsGithub />
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="ms-3">
+        <a href="#" target="_blank" rel="noopener noreferrer" className="ms-2 ms-md-3">
           <BsLinkedin />
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="ms-3">
+        <a href="#" target="_blank" rel="noopener noreferrer" className="ms-2 ms-md-3">
           <BsCodeSquare />
         </a>
       </div>

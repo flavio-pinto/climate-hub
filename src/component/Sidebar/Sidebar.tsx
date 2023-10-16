@@ -8,7 +8,9 @@ import styles from "./Sidebar.module.css"
 import { ListGroup } from "react-bootstrap"
 import { NavLink } from "react-router-dom"
 
-/* type Props = {} */
+type Props = {
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
 
 const navLinks = [
   { to: "/", icon: <AiFillHome />, text: "Home" },
@@ -20,7 +22,7 @@ const navLinks = [
   { to: "/news", icon: <BiNews />, text: "News" },
 ]
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC<Props> = (props: Props) => {
   return (
     <aside className={`${styles.sidebar} d-flex flex-column`}>
       <div className={`${styles.sidebarBrand} d-flex mb-4`}>
@@ -35,6 +37,7 @@ const Sidebar: React.FC = () => {
           >
             <NavLink
               to={link.to}
+              onClick={() => props.setSidebarOpen(false)}
               className={({ isActive, isPending }) =>
                 isPending
                   ? `${styles.sidebarMenuItemLink} d-flex align-items-start py-3 px-1 ${styles.pending}`

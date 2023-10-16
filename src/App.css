@@ -1,4 +1,4 @@
-/* Modalità Normale */
+/* Light mode */
 :root {
   --bg-col-primary: #28559A;
   --bg-col-secondary: #DDEDF4;
@@ -28,6 +28,6 @@
   width: 100%;
 }
 
-.sidebar-closed {
-  margin-left: -280px; /* o qualsiasi sia la larghezza della Sidebar */
+.sidebarClosed {
+  margin-left: -280px;
 }

@@ -18,7 +18,7 @@ function App() {
   return (
     <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
       <Router>
-        <div className={`d-flex appContainer ${sidebarOpen ? '' : 'sidebar-closed'}`}>
+        <div className={`d-flex appContainer ${sidebarOpen ? '' : 'sidebarClosed'}`}>
           <Sidebar />
           <div className="appContent">
             <Header setDarkMode={setDarkMode} darkMode={darkMode} setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />

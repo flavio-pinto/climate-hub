@@ -20,7 +20,8 @@
 }
 
 .appContainer {
-  height: 100vh;
+  
+  max-width: 100vw;
   transition: margin-left 0.3s;
 }
 
@@ -30,4 +31,11 @@
 
 .sidebarClosed {
   margin-left: -280px;
+}
+
+@media screen and (min-width: 992px) {
+  .appContainer {
+    max-width: none;
+    height: 100vh;
+  }
 }

@@ -1,23 +1,29 @@
 .home {
+  /* max-width: 100vw; */
+  min-height: calc(100% - 90px);
   margin: 10px;
   background-color: var(--bg-col-secondary);
   border-radius: 4px;
+  color: var(--txt-col-secondary);
+  font-size: 20px;
 }
 
-.homeContent {
-  width: 80%;
-  position: relative;
+.home h2 {
+  font-size: 40px;
+  margin: 0;
 }
 
-/* .earth {
+.earthContainer {
+  height: 70vh;
+}
+
+.earth {
   height: 100%;
   aspect-ratio: 1/1;
-  background: url(https://1.bp.blogspot.com/-UUXaK5GCj-k/UcsKJRMgkVI/AAAAAAAACfM/sePP_H08JTQ/s1600/1.jpg);
+  background: url(../../assets/images/earth-satellite.jpeg);
   border-radius: 100%;
   background-size: cover;
-  animation: spin 60s infinite linear;
-  position: absolute;
-  right: -25%;
+  animation: spin 80s infinite linear;
 }
 
 @keyframes spin {
@@ -25,9 +31,9 @@
     background-position-x: 0;
   }
   100% {
-    background-position-x: 167%; 
+    background-position-x: 200%; 
   }
-} */
+}
 
 
 @media screen and (min-width: 768px) {

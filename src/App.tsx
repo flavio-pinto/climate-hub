@@ -13,7 +13,7 @@ import { useState } from "react"
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false)
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(window.innerWidth >= 576)
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(window.innerWidth >= 992)
 
   return (
     <div className={`app ${darkMode ? 'dark-mode' : ''}`}>

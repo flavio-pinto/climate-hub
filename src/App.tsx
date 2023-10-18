@@ -6,10 +6,11 @@ import {
 import "normalize.css"
 import "bootstrap/dist/css/bootstrap-grid.min.css"
 import "./App.css"
+import { useState } from "react"
 import Home from "./pages/Home/Home"
 import Sidebar from "./component/Sidebar/Sidebar"
 import Header from "./component/Header/Header"
-import { useState } from "react"
+import Sections from "./pages/Sections/Sections"
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false)
@@ -24,6 +25,7 @@ function App() {
             <Header setDarkMode={setDarkMode} darkMode={darkMode} setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} />
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/:section" element={<Sections />} />
             </Routes>
           </div>
         </div>

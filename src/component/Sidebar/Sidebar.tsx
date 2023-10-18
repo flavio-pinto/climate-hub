@@ -14,11 +14,11 @@ type Props = {
 
 const navLinks = [
   { to: "/", icon: <AiFillHome />, text: "Home" },
-  { to: "/temperatures", icon: <FaTemperatureFull />, text: "Temperatures" },
+  { to: "/temperature", icon: <FaTemperatureFull />, text: "Temperatures" },
   { to: "/co2", icon: <BsFillCarFrontFill />, text: "CO2" },
   { to: "/methane", icon: <FaFireFlameCurved />, text: "Methane" },
-  { to: "/no2", icon: <GiPoisonGas />, text: "NO2" },
-  { to: "/arctic-ice", icon: <FaSnowflake />, text: "Arctic Ice" },
+  { to: "/nitrous-oxide", icon: <GiPoisonGas />, text: "NO2" },
+  { to: "/arctic", icon: <FaSnowflake />, text: "Arctic Ice" },
   { to: "/news", icon: <BiNews />, text: "News" },
 ]
 

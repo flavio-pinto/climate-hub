@@ -1,0 +1,13 @@
+.content {
+  min-height: calc(100% - 90px);
+  margin: 10px;
+  background-color: var(--bg-col-secondary);
+  border-radius: 4px;
+  color: var(--txt-col-secondary);
+  font-size: 20px;
+  text-align: center;
+}
+
+/* .contentDescription {
+  
+} */

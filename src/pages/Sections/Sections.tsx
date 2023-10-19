@@ -1,8 +1,9 @@
-import { useParams } from "react-router-dom";
-import styles from "./Sections.module.css";
-import { temperature, co2, methane, no2, ice } from "../../data/section-data";
-import { SectionInfo } from "../../interfaces/SectionInfo";
-import { Col, Container, ListGroup, Row } from "react-bootstrap";
+import { useParams } from "react-router-dom"
+import useClimateData from "../../services/fetchChartData"
+import styles from "./Sections.module.css"
+import { temperature, co2, methane, no2, ice } from "../../data/SectionInfo"
+import { SectionInfo } from "../../interfaces/SectionInfo"
+import { Col, Container, ListGroup, Row } from "react-bootstrap"
 
 const sectionDataMap: Record<string, SectionInfo> = {
   temperature,
@@ -13,7 +14,10 @@ const sectionDataMap: Record<string, SectionInfo> = {
 };
 
 const Sections: React.FC = () => {
-  const { section } = useParams<{ section: string }>();
+  const { section } = useParams<{ section: string | undefined }>();
+  const sectionData = sectionDataMap[section];
+  const { data, error } = useClimateData(sectionData.apiEndpoint)  
+  
 
   if (!section || !sectionDataMap[section]) {
     return (
@@ -23,7 +27,8 @@ const Sections: React.FC = () => {
     );
   }
 
-  const sectionData = sectionDataMap[section];
+  
+  
 
   return (
     <main className={`${styles.content} d-flex p-4`}>
@@ -55,8 +60,8 @@ const Sections: React.FC = () => {
           <Col xs={12} lg={4}>
             <ListGroup>
               <h3>What Can We Do?</h3>
-              {sectionData.whatCanWeDo.map((data) => (
-                <ListGroup.Item>{data}</ListGroup.Item>
+              {sectionData.whatCanWeDo.map((data, i: number) => (
+                <ListGroup.Item key={i}>{data}</ListGroup.Item>
               ))}
             </ListGroup>
           </Col>

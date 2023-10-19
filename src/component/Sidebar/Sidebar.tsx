@@ -17,8 +17,8 @@ const navLinks = [
   { to: "/temperature", icon: <FaTemperatureFull />, text: "Temperatures" },
   { to: "/co2", icon: <BsFillCarFrontFill />, text: "CO2" },
   { to: "/methane", icon: <FaFireFlameCurved />, text: "Methane" },
-  { to: "/nitrous-oxide", icon: <GiPoisonGas />, text: "NO2" },
-  { to: "/arctic", icon: <FaSnowflake />, text: "Arctic Ice" },
+  { to: "/no2", icon: <GiPoisonGas />, text: "NO2" },
+  { to: "/ice", icon: <FaSnowflake />, text: "Arctic Ice" },
   { to: "/news", icon: <BiNews />, text: "News" },
 ]
 

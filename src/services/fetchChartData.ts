@@ -22,7 +22,7 @@ const useClimateData = (section: string): ClimateDataResult => {
 
       try {
         const response: AxiosResponse = await axios.get(url);
-        setData(response.data);
+        setData(await response.data);
         setError(null);
       } catch (error: unknown) {
         if (axios.isAxiosError(error)) {

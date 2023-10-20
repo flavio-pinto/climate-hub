@@ -6,8 +6,15 @@
   color: var(--txt-col-secondary);
   font-size: 20px;
   text-align: center;
+  width: calc(100vw - 20px);
 }
 
 /* .contentDescription {
   
 } */
+
+@media screen and (min-width: 992px) {
+  .content {
+    width: unset;
+  }
+}

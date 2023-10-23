@@ -3,8 +3,9 @@ import useClimateData from "../../services/fetchChartData";
 import styles from "./Sections.module.css";
 import { temperature, co2, methane, no2, ice } from "../../data/SectionInfo";
 import { SectionInfo } from "../../interfaces/SectionInfo";
-import { Col, Container, ListGroup, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import TemperatureGraph from "../../component/Graph/TemperatureGraph";
+import Co2Graph from "../../component/Graph/Co2Graph";
 
 const sectionDataMap: Record<string, SectionInfo> = {
   temperature,
@@ -15,9 +16,10 @@ const sectionDataMap: Record<string, SectionInfo> = {
 };
 
 const Sections: React.FC = () => {
-  const { section } = useParams<{ section: string | undefined }>();
-  const sectionData = sectionDataMap[section];
+  const { section } = useParams<{ section: string }>();
+  const sectionData = sectionDataMap[section as string];
   const { data, error } = useClimateData(sectionData.apiEndpoint);
+  
 
   if (!section || !sectionDataMap[section]) {
     return (
@@ -29,11 +31,6 @@ const Sections: React.FC = () => {
 
   return (
     <main className={`${styles.content} d-flex flex-column flex-lg-row p-4`}>
-      {/* <ul>
-        {sectionData.whatCanWeDo.map(data => (
-          <li>{data}</li>
-        ))}
-      </ul> */}
       <Container fluid>
         <Row className="align-items-center">
           <Col xs={12} lg={8} className={styles.contentDescription}>
@@ -49,6 +46,7 @@ const Sections: React.FC = () => {
           
         </Row>
         <TemperatureGraph data={data} />
+        {/* <Co2Graph data={data} /> */}
       </Container>
     </main>
   );

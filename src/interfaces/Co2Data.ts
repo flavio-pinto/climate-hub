@@ -2,7 +2,7 @@ export interface Co2Data {
   co2: Co2DataElement[]
 }
 
-interface Co2DataElement {
+export interface Co2DataElement {
   year: string
   month: string
   day: string

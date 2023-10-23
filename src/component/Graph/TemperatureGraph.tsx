@@ -5,31 +5,34 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
-import { TemperatureData } from "../../interfaces/TemperatureData";
+import { TemperatureData, TemperatureDataResult } from "../../interfaces/TemperatureData";
 import { Co2Data } from "../../interfaces/Co2Data";
 import { MethaneData } from "../../interfaces/MethaneData";
 import { No2Data } from "../../interfaces/No2Data";
 import { ArcticData } from "../../interfaces/ArcticData";
 import styles from "./Graph.module.css";
-import { Col, Container, Row } from "react-bootstrap";
 
-interface Props {
-  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData;
+type Props = {
+  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null;
+}
+
+interface TemperatureChartData {
+  time: string
+  temperature: string
 }
 
 const Graph: React.FC<Props> = ({ data }) => {
-  const [chartData, setChartData] = useState<any[]>([]);
+  const [chartData, setChartData] = useState<TemperatureChartData[]>([]);
 
   useEffect(() => {
-    if (data && data.result) {
+    if(data && "result" in data) {
       setChartData(
-        data.result
-          .filter((obj) => obj.time.includes(".04"))
-          .map((obj) => {
+        (data as TemperatureData).result
+          .filter((obj: TemperatureDataResult) => obj.time.includes(".04"))
+          .map((obj: TemperatureDataResult) => {
             return {
               time: obj.time.replace(".04", ""),
               temperature: obj.station,
@@ -40,8 +43,8 @@ const Graph: React.FC<Props> = ({ data }) => {
   }, [data]);
 
   const gradientOffset = () => {
-    const maxCelsius = Math.max(...chartData.map((i) => i.temperature));
-    const minCelsius = Math.min(...chartData.map((i) => i.temperature));
+    const maxCelsius = Math.max(...chartData.map((i) => Number(i.temperature)));
+    const minCelsius = Math.min(...chartData.map((i) => Number(i.temperature)));
 
     if (maxCelsius <= 0) {
       return 0;
@@ -72,7 +75,6 @@ const Graph: React.FC<Props> = ({ data }) => {
             bottom: 30,
           }}
         >
-          {/* set negative values blue and positive red */}
           <defs>
             <linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
               <stop offset={offset} stopColor="#f87575" stopOpacity={1} />

@@ -16,7 +16,7 @@ import {
 import { Tooltip } from "react-bootstrap";
 
 type Props = {
-  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData;
+  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null;
 };
 
 interface Co2ChartData {

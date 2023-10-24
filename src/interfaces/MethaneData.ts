@@ -2,7 +2,7 @@ export interface MethaneData {
   methane: MethaneDataElement[]
 }
 
-interface MethaneDataElement {
+export interface MethaneDataElement {
   date: string
   average: string
   trend: string

@@ -1,9 +1,9 @@
 export interface ArcticData {
   error: null | string
-  arcticData: ArcticDataResult[]
+  arcticData: ArcticDataElement[]
 }
 
-export interface ArcticDataResult {
+export interface ArcticDataElement {
   Column1: number;
   year: number;
   month: number;

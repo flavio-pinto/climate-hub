@@ -8,6 +8,7 @@ import TemperatureGraph from "../../component/Graph/TemperatureGraph";
 import Co2Graph from "../../component/Graph/Co2Graph";
 import MethaneGraph from "../../component/Graph/MethaneGraph";
 import No2Graph from "../../component/Graph/No2Graph";
+import ArticIceGraph from "../../component/Graph/ArticIceGraph";
 
 const sectionDataMap: Record<string, SectionInfo> = {
   temperature,
@@ -49,8 +50,9 @@ const Sections: React.FC = () => {
         </Row>
         {/* <TemperatureGraph data={data} />
         <Co2Graph data={data} /> */}
-        {/* <MethaneGraph data={data} /> */}
-        <No2Graph data={data} />
+        {/* <MethaneGraph data={data} /> 
+        <No2Graph data={data} />*/}
+        <ArticIceGraph data={data} />
       </Container>
     </main>
   );

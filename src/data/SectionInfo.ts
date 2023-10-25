@@ -55,7 +55,7 @@ export const no2: SectionInfo = {
 export const ice: SectionInfo = {
   name: "Polar Glaciers",
   apiEndpoint: "arctic-api",
-  description: "The polar ice caps, found in the Arctic and Antarctic regions, are intricately linked to global warming. As Earth's temperature rises due to increased greenhouse gas emissions, these ice caps experience accelerated melting. This melting contributes to rising sea levels, posing a threat to coastal areas and ecosystems. Additionally, the reflective nature of ice plays a crucial role in maintaining Earth's temperature balance; as ice diminishes, more sunlight is absorbed by darker surfaces, further intensifying global warming. The loss of polar ice also impacts wildlife habitats, causing ecological disruptions and emphasizing the urgent need to mitigate climate change.",
+  description: "The polar ice caps are intricately linked to global warming. As Earth's temperature rises due to increased greenhouse gas emissions, these ice caps experience accelerated melting. This melting contributes to rising sea levels, posing a threat to coastal areas and ecosystems. Additionally, the reflective nature of ice plays a crucial role in maintaining Earth's temperature balance; as ice diminishes, more sunlight is absorbed by darker surfaces, further intensifying global warming. The loss of polar ice also impacts wildlife habitats, causing ecological disruptions.",
   image: "",
   whatCanWeDo: [
     "Promote Research and Awareness",

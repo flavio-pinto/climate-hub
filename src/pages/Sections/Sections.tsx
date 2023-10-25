@@ -48,11 +48,11 @@ const Sections: React.FC = () => {
           </Col>
           
         </Row>
-        {/* <TemperatureGraph data={data} />
-        <Co2Graph data={data} /> */}
-        {/* <MethaneGraph data={data} /> 
-        <No2Graph data={data} />*/}
-        <ArticIceGraph data={data} />
+        {section === "temperature" && <TemperatureGraph data={data} />}
+        {section === "co2" && <Co2Graph data={data} />}
+        {section === "methane" && <MethaneGraph data={data} />}
+        {section === "no2" && <No2Graph data={data} />}
+        {section === "ice" && <ArticIceGraph data={data} />}
       </Container>
     </main>
   );

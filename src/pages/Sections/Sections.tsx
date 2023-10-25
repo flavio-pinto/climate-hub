@@ -7,6 +7,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import TemperatureGraph from "../../component/Graph/TemperatureGraph";
 import Co2Graph from "../../component/Graph/Co2Graph";
 import MethaneGraph from "../../component/Graph/MethaneGraph";
+import No2Graph from "../../component/Graph/No2Graph";
 
 const sectionDataMap: Record<string, SectionInfo> = {
   temperature,
@@ -48,7 +49,8 @@ const Sections: React.FC = () => {
         </Row>
         {/* <TemperatureGraph data={data} />
         <Co2Graph data={data} /> */}
-        <MethaneGraph data={data} />
+        {/* <MethaneGraph data={data} /> */}
+        <No2Graph data={data} />
       </Container>
     </main>
   );

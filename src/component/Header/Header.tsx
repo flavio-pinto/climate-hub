@@ -1,23 +1,23 @@
-import { BiChevronLeft, BiWorld } from "react-icons/bi";
-import { BsGithub, BsLinkedin, BsCodeSquare } from "react-icons/bs";
-import Toggle from "react-toggle";
-import "react-toggle/style.css";
-import "./DarkModeToggleOverride.css";
-import styles from "./Header.module.css";
-import { NavLink } from "react-router-dom";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { BiChevronLeft, BiWorld } from "react-icons/bi"
+import { BsGithub, BsLinkedin, BsCodeSquare } from "react-icons/bs"
+import Toggle from "react-toggle"
+import "react-toggle/style.css"
+import "./DarkModeToggleOverride.css"
+import styles from "./Header.module.css"
+import { NavLink } from "react-router-dom"
+import { RxHamburgerMenu } from "react-icons/rx"
 
 type Props = {
-  darkMode: boolean;
-  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
-  sidebarOpen: boolean;
-  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
-};
+  darkMode: boolean
+  setDarkMode: React.Dispatch<React.SetStateAction<boolean>>
+  sidebarOpen: boolean
+  setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
 
 const Header: React.FC<Props> = (props: Props) => {
   const toggleDarkMode = () => {
-    props.setDarkMode(!props.darkMode);
-  };
+    props.setDarkMode(!props.darkMode)
+  }
 
   return (
     <header
@@ -67,7 +67,7 @@ const Header: React.FC<Props> = (props: Props) => {
         </a>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

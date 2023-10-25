@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import styles from "./Graph.module.css";
-import { TemperatureData } from "../../interfaces/TemperatureData";
-import { Co2Data, Co2DataElement } from "../../interfaces/Co2Data";
-import { MethaneData } from "../../interfaces/MethaneData";
-import { No2Data } from "../../interfaces/No2Data";
-import { ArcticData } from "../../interfaces/ArcticData";
+import { useEffect, useState } from "react"
+import styles from "./Graph.module.css"
+import { TemperatureData } from "../../interfaces/TemperatureData"
+import { Co2Data, Co2DataElement } from "../../interfaces/Co2Data"
+import { MethaneData } from "../../interfaces/MethaneData"
+import { No2Data } from "../../interfaces/No2Data"
+import { ArcticData } from "../../interfaces/ArcticData"
 import {
   Area,
   AreaChart,
@@ -12,12 +12,12 @@ import {
   ResponsiveContainer,
   XAxis,
   YAxis,
-} from "recharts";
-import { Tooltip } from "react-bootstrap";
+} from "recharts"
+import { Tooltip } from "react-bootstrap"
 
 type Props = {
-  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null;
-};
+  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null
+}
 
 interface Co2ChartData {
   year: string
@@ -25,7 +25,7 @@ interface Co2ChartData {
 }
 
 const Co2Graph: React.FC<Props> = ({ data }) => {
-  const [chartData, setChartData] = useState<Co2ChartData[]>([]);
+  const [chartData, setChartData] = useState<Co2ChartData[]>([])
 
   useEffect(() => {
     if (data && "co2" in data) {
@@ -35,9 +35,9 @@ const Co2Graph: React.FC<Props> = ({ data }) => {
           year: obj.year,
           ppm: obj.trend,
         } as Co2ChartData))
-      );
+      )
     }
-  }, [data]);
+  }, [data])
 
   return (
     <div className={styles.chart}>
@@ -88,7 +88,7 @@ const Co2Graph: React.FC<Props> = ({ data }) => {
         </AreaChart>
       </ResponsiveContainer>
     </div>
-  );
-};
+  )
+}
 
-export default Co2Graph;
+export default Co2Graph

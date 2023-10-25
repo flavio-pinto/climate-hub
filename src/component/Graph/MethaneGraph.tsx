@@ -1,10 +1,10 @@
-import { TemperatureData } from "../../interfaces/TemperatureData";
-import { Co2Data } from "../../interfaces/Co2Data";
-import { MethaneData, MethaneDataElement } from "../../interfaces/MethaneData";
-import { No2Data } from "../../interfaces/No2Data";
-import { ArcticData } from "../../interfaces/ArcticData";
-import { useEffect, useState } from "react";
-import styles from "./Graph.module.css";
+import { TemperatureData } from "../../interfaces/TemperatureData"
+import { Co2Data } from "../../interfaces/Co2Data"
+import { MethaneData, MethaneDataElement } from "../../interfaces/MethaneData"
+import { No2Data } from "../../interfaces/No2Data"
+import { ArcticData } from "../../interfaces/ArcticData"
+import { useEffect, useState } from "react"
+import styles from "./Graph.module.css"
 import {
   Bar,
   BarChart,
@@ -12,20 +12,20 @@ import {
   ResponsiveContainer,
   XAxis,
   YAxis,
-} from "recharts";
-import { Tooltip } from "react-bootstrap";
+} from "recharts"
+import { Tooltip } from "react-bootstrap"
 
 type Props = {
-  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null;
-};
+  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null
+}
 
 interface MethaneChartData {
-  year: string;
-  ppb: string;
+  year: string
+  ppb: string
 }
 
 const MethaneGraph: React.FC<Props> = ({ data }) => {
-  const [chartData, setChartData] = useState<MethaneChartData[]>([]);
+  const [chartData, setChartData] = useState<MethaneChartData[]>([])
 
   useEffect(() => {
     if (data && "methane" in data) {
@@ -39,9 +39,9 @@ const MethaneGraph: React.FC<Props> = ({ data }) => {
                 ppb: obj.average,
               } as MethaneChartData)
           )
-      );
+      )
     }
-  }, [data]);
+  }, [data])
 
   return (
     <div className={styles.chart}>
@@ -80,7 +80,7 @@ const MethaneGraph: React.FC<Props> = ({ data }) => {
         </BarChart>
       </ResponsiveContainer>
     </div>
-  );
-};
+  )
+}
 
-export default MethaneGraph;
+export default MethaneGraph

@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { ArcticData } from "../../interfaces/ArcticData";
-import { Co2Data } from "../../interfaces/Co2Data";
-import { MethaneData } from "../../interfaces/MethaneData";
-import { No2Data, No2DataElement } from "../../interfaces/No2Data";
-import { TemperatureData } from "../../interfaces/TemperatureData";
-import styles from "./Graph.module.css";
-import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
-import { Tooltip } from "react-bootstrap";
+import { useEffect, useState } from "react"
+import { ArcticData } from "../../interfaces/ArcticData"
+import { Co2Data } from "../../interfaces/Co2Data"
+import { MethaneData } from "../../interfaces/MethaneData"
+import { No2Data, No2DataElement } from "../../interfaces/No2Data"
+import { TemperatureData } from "../../interfaces/TemperatureData"
+import styles from "./Graph.module.css"
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
+import { Tooltip } from "react-bootstrap"
 
 type Props = {
-  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null;
+  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null
 }
 
 interface Co2ChartData {
@@ -29,11 +29,11 @@ const No2Graph: React.FC<Props> = ({ data }) => {
             return {
               year: obj.date.replace(".10", ""),
               ppb: obj.average,
-            };
+            }
           })
-      );
+      )
     }
-  }, [data]);
+  }, [data])
 
   return (
     <div className={styles.chart}>

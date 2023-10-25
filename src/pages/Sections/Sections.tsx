@@ -1,14 +1,15 @@
-import { useParams } from "react-router-dom";
-import useClimateData from "../../services/fetchChartData";
-import styles from "./Sections.module.css";
-import { temperature, co2, methane, no2, ice } from "../../data/SectionInfo";
-import { SectionInfo } from "../../interfaces/SectionInfo";
-import { Col, Container, Row } from "react-bootstrap";
-import TemperatureGraph from "../../component/Graph/TemperatureGraph";
-import Co2Graph from "../../component/Graph/Co2Graph";
-import MethaneGraph from "../../component/Graph/MethaneGraph";
-import No2Graph from "../../component/Graph/No2Graph";
-import ArticIceGraph from "../../component/Graph/ArticIceGraph";
+import { useParams } from "react-router-dom"
+import useClimateData from "../../services/fetchChartData"
+import styles from "./Sections.module.css"
+import { temperature, co2, methane, no2, ice } from "../../data/SectionInfo"
+import { SectionInfo } from "../../interfaces/SectionInfo"
+import { Col, Container, Row } from "react-bootstrap"
+import TemperatureGraph from "../../component/Graph/TemperatureGraph"
+import Co2Graph from "../../component/Graph/Co2Graph"
+import MethaneGraph from "../../component/Graph/MethaneGraph"
+import No2Graph from "../../component/Graph/No2Graph"
+import ArticIceGraph from "../../component/Graph/ArticIceGraph"
+import { RingLoader } from "react-spinners"
 
 const sectionDataMap: Record<string, SectionInfo> = {
   temperature,
@@ -16,21 +17,12 @@ const sectionDataMap: Record<string, SectionInfo> = {
   methane,
   no2,
   ice,
-};
+}
 
 const Sections: React.FC = () => {
-  const { section } = useParams<{ section: string }>();
-  const sectionData = sectionDataMap[section as string];
-  const { data, error } = useClimateData(sectionData.apiEndpoint);
-  
-
-  if (!section || !sectionDataMap[section]) {
-    return (
-      <div>
-        <p>Sezione non valida</p>
-      </div>
-    );
-  }
+  const { section } = useParams<{ section: string }>()
+  const sectionData = sectionDataMap[section as string]
+  const { data, error } = useClimateData(sectionData.apiEndpoint)
 
   return (
     <main className={`${styles.content} d-flex flex-column flex-lg-row p-4`}>
@@ -46,16 +38,27 @@ const Sections: React.FC = () => {
               alt=""
             />
           </Col>
-          
         </Row>
-        {section === "temperature" && <TemperatureGraph data={data} />}
-        {section === "co2" && <Co2Graph data={data} />}
-        {section === "methane" && <MethaneGraph data={data} />}
-        {section === "no2" && <No2Graph data={data} />}
-        {section === "ice" && <ArticIceGraph data={data} />}
+        {data ? (
+          <>
+            {section === "temperature" && <TemperatureGraph data={data} />}
+            {section === "co2" && <Co2Graph data={data} />}
+            {section === "methane" && <MethaneGraph data={data} />}
+            {section === "no2" && <No2Graph data={data} />}
+            {section === "ice" && <ArticIceGraph data={data} />}
+          </>
+        ) : (
+          <div className={styles.spinnerContainer}>
+            <RingLoader
+              className="d-block mx-auto my-5"
+              size={180}
+              aria-label="Loading Spinner"
+            />
+          </div>
+        )}
       </Container>
     </main>
-  );
-};
+  )
+}
 
-export default Sections;
+export default Sections

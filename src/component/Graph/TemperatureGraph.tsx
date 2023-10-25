@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 import {
   AreaChart,
   Area,
@@ -7,16 +7,16 @@ import {
   Tooltip,
   CartesianGrid,
   ResponsiveContainer,
-} from "recharts";
-import { TemperatureData, TemperatureDataResult } from "../../interfaces/TemperatureData";
-import { Co2Data } from "../../interfaces/Co2Data";
-import { MethaneData } from "../../interfaces/MethaneData";
-import { No2Data } from "../../interfaces/No2Data";
-import { ArcticData } from "../../interfaces/ArcticData";
-import styles from "./Graph.module.css";
+} from "recharts"
+import { TemperatureData, TemperatureDataResult } from "../../interfaces/TemperatureData"
+import { Co2Data } from "../../interfaces/Co2Data"
+import { MethaneData } from "../../interfaces/MethaneData"
+import { No2Data } from "../../interfaces/No2Data"
+import { ArcticData } from "../../interfaces/ArcticData"
+import styles from "./Graph.module.css"
 
 type Props = {
-  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null;
+  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null
 }
 
 interface TemperatureChartData {
@@ -25,7 +25,7 @@ interface TemperatureChartData {
 }
 
 const Graph: React.FC<Props> = ({ data }) => {
-  const [chartData, setChartData] = useState<TemperatureChartData[]>([]);
+  const [chartData, setChartData] = useState<TemperatureChartData[]>([])
 
   useEffect(() => {
     if(data && "result" in data) {
@@ -36,30 +36,30 @@ const Graph: React.FC<Props> = ({ data }) => {
             return {
               time: obj.time.replace(".04", ""),
               temperature: obj.station,
-            };
+            }
           })
-      );
+      )
     }
-  }, [data]);
+  }, [data])
 
   const gradientOffset = () => {
-    const maxCelsius = Math.max(...chartData.map((i) => Number(i.temperature)));
-    const minCelsius = Math.min(...chartData.map((i) => Number(i.temperature)));
+    const maxCelsius = Math.max(...chartData.map((i) => Number(i.temperature)))
+    const minCelsius = Math.min(...chartData.map((i) => Number(i.temperature)))
 
     if (maxCelsius <= 0) {
-      return 0;
+      return 0
     }
     if (minCelsius >= 0) {
-      return 1;
+      return 1
     }
 
-    return maxCelsius / (maxCelsius - minCelsius);
-  };
+    return maxCelsius / (maxCelsius - minCelsius)
+  }
 
-  const offset = gradientOffset();
+  const offset = gradientOffset()
 
   if (chartData.length === 0) {
-    return <h3>Errore: Nessun dato disponibile per generare il grafico.</h3>;
+    return <h3>Errore: Nessun dato disponibile per generare il grafico.</h3>
   }
 
   return (
@@ -114,7 +114,7 @@ const Graph: React.FC<Props> = ({ data }) => {
         </AreaChart>
       </ResponsiveContainer>
     </div>
-  );
-};
+  )
+}
 
-export default Graph;
+export default Graph

@@ -1,5 +1,5 @@
-import { Col, Container, Row } from "react-bootstrap";
-import styles from "./Home.module.css";
+import { Col, Container, Row } from "react-bootstrap"
+import styles from "./Home.module.css"
 
 /* type Props = {} */
 
@@ -34,7 +34,7 @@ const Home: React.FC = (/* props: Props */) => {
         </Row>
       </Container>
     </main>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

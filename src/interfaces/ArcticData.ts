@@ -4,12 +4,12 @@ export interface ArcticData {
 }
 
 export interface ArcticDataElement {
-  Column1: number;
-  year: number;
-  month: number;
-  "data-type": string;
-  hemisphere: string;
-  extent: number;
-  area: number;
-  rank: number;
+  Column1: number
+  year: number
+  month: number
+  "data-type": string
+  hemisphere: string
+  extent: number
+  area: number
+  rank: number
 }

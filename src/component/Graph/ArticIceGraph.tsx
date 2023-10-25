@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { ArcticData, ArcticDataElement } from "../../interfaces/ArcticData";
-import { Co2Data } from "../../interfaces/Co2Data";
-import { MethaneData } from "../../interfaces/MethaneData";
-import { No2Data } from "../../interfaces/No2Data";
-import { TemperatureData } from "../../interfaces/TemperatureData";
-import styles from "./Graph.module.css";
+import { useEffect, useState } from "react"
+import { ArcticData, ArcticDataElement } from "../../interfaces/ArcticData"
+import { Co2Data } from "../../interfaces/Co2Data"
+import { MethaneData } from "../../interfaces/MethaneData"
+import { No2Data } from "../../interfaces/No2Data"
+import { TemperatureData } from "../../interfaces/TemperatureData"
+import styles from "./Graph.module.css"
 import {
   Area,
   AreaChart,
@@ -13,21 +13,21 @@ import {
   ResponsiveContainer,
   XAxis,
   YAxis,
-} from "recharts";
-import { Tooltip } from "react-bootstrap";
+} from "recharts"
+import { Tooltip } from "react-bootstrap"
 
 type Props = {
-  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null;
-};
+  data: TemperatureData | Co2Data | MethaneData | No2Data | ArcticData | null
+}
 
 interface ArticIceGraphData {
-  year: number;
-  extent: number;
-  area: number;
+  year: number
+  extent: number
+  area: number
 }
 
 const ArticIceGraph: React.FC<Props> = ({ data }) => {
-  const [chartData, setChartData] = useState<ArticIceGraphData[]>([]);
+  const [chartData, setChartData] = useState<ArticIceGraphData[]>([])
 
   useEffect(() => {
     if (data && "arcticData" in data) {
@@ -37,11 +37,11 @@ const ArticIceGraph: React.FC<Props> = ({ data }) => {
             year: obj.year,
             extent: obj.extent,
             area: obj.area,
-          };
+          }
         })
-      );
+      )
     }
-  }, [data]);
+  }, [data])
 
   return (
     <div className={styles.chart}>
@@ -91,7 +91,7 @@ const ArticIceGraph: React.FC<Props> = ({ data }) => {
         </AreaChart>
       </ResponsiveContainer>
     </div>
-  );
-};
+  )
+}
 
-export default ArticIceGraph;
+export default ArticIceGraph

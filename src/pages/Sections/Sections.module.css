@@ -9,9 +9,10 @@
   width: calc(100vw - 20px);
 }
 
-/* .contentDescription {
-  
-} */
+.errorMsg {
+  color: #772323;
+  font-weight: bold;
+}
 
 @media screen and (min-width: 992px) {
   .content {

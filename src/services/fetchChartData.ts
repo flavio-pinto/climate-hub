@@ -29,18 +29,18 @@ const useClimateData = (section: string): ClimateDataResult => {
           const axiosError = error as AxiosError
 
           if (axiosError.response) {
-            console.error('Errore di risposta dal server:', axiosError.response.status, axiosError.response.data)
-            setError(`Errore di risposta dal server: ${axiosError.response.status}`)
+            console.error('Server response error:', axiosError.response.status, axiosError.response.data)
+            setError(`Server response error: ${axiosError.response.status}`)
           } else if (axiosError.request) {
-            console.error('Nessuna risposta dal server:', axiosError.request)
-            setError('Nessuna risposta dal server')
+            console.error('No response from the server:', axiosError.request)
+            setError('No response from the server')
           } else {
-            console.error('Errore durante la configurazione della richiesta:', axiosError.message)
-            setError(`Errore durante la configurazione della richiesta: ${axiosError.message}`)
+            console.error('Error configuring request:', axiosError.message)
+            setError(`Error configuring request: ${axiosError.message}`)
           }
         } else {
-          console.error('Errore sconosciuto:', error.message)
-          setError(`Errore sconosciuto: ${error.message}`)
+          console.error('Unknown Error:', error)
+          setError(`Unknown Error: ${error}`)
         }
       }
     }

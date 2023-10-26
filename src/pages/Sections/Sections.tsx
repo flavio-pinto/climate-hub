@@ -28,41 +28,45 @@ const Sections: React.FC = () => {
     <main className={`${styles.content} d-flex flex-column flex-lg-row p-4`}>
       <Container fluid>
         <Row className="align-items-center">
-          <Col xs={12} lg={8} className={styles.contentDescription}>
+          <Col xs={12} lg={8} className={`${styles.contentDescription} order-md-0 order-lg-0`}>
             <h2>{sectionData.name}</h2>
             <p>{sectionData.description}</p>
           </Col>
-          <Col xs={12} lg={4}>
+          <Col xs={12} lg={4} className="order-md-2 order-lg-1">
             <img
-              src="https://images.vexels.com/media/users/3/298390/isolated/lists/f659981c21d381aba498ac17f44d5b5d-global-warming-planet-earth-cartoon-character.png"
+              className={`${styles.sectionImg}`}
+              src={sectionData.image}
               alt=""
             />
           </Col>
+          <Col xs={12} className={`order-md-1 order-lg-2`}>
+            {error ? ( // Verifica se c'è un errore
+              <div className="py-5">
+                <p className={styles.errorMsg}>
+                  The data retrieval encountered an error. Please try refreshing
+                  the page."
+                </p>
+              </div>
+            ) : data ? ( // Se non c'è errore e ci sono dati, visualizza il grafico
+              <>
+                {section === "temperature" && <TemperatureGraph data={data} />}
+                {section === "co2" && <Co2Graph data={data} />}
+                {section === "methane" && <MethaneGraph data={data} />}
+                {section === "no2" && <No2Graph data={data} />}
+                {section === "ice" && <ArticIceGraph data={data} />}
+              </>
+            ) : (
+              // Altrimenti, mostra lo spinner di caricamento
+              <div className={styles.spinnerContainer}>
+                <RingLoader
+                  className="d-block mx-auto my-5"
+                  size={180}
+                  aria-label="Loading Spinner"
+                />
+              </div>
+            )}
+          </Col>
         </Row>
-        {error ? ( // Verifica se c'è un errore
-          <div className="py-5">
-            <p className={styles.errorMsg}>
-              The data retrieval encountered an error. Please try refreshing the page."
-            </p>
-          </div>
-        ) : data ? ( // Se non c'è errore e ci sono dati, visualizza il grafico
-          <>
-            {section === "temperature" && <TemperatureGraph data={data} />}
-            {section === "co2" && <Co2Graph data={data} />}
-            {section === "methane" && <MethaneGraph data={data} />}
-            {section === "no2" && <No2Graph data={data} />}
-            {section === "ice" && <ArticIceGraph data={data} />}
-          </>
-        ) : (
-          // Altrimenti, mostra lo spinner di caricamento
-          <div className={styles.spinnerContainer}>
-            <RingLoader
-              className="d-block mx-auto my-5"
-              size={180}
-              aria-label="Loading Spinner"
-            />
-          </div>
-        )}
       </Container>
     </main>
   )

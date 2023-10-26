@@ -9,6 +9,11 @@
   width: calc(100vw - 20px);
 }
 
+.sectionImg {
+  max-width: 100%;
+  max-height: 300px;
+}
+
 .errorMsg {
   color: #772323;
   font-weight: bold;

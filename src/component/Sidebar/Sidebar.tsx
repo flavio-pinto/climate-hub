@@ -37,7 +37,7 @@ const Sidebar: React.FC<Props> = (props: Props) => {
           >
             <NavLink
               to={link.to}
-              onClick={() => !(window.innerWidth >= 992) ?? props.setSidebarOpen(false)}
+              onClick={() => !(window.innerWidth >= 992) && props.setSidebarOpen(false)}
               className={({ isActive, isPending }) =>
                 isPending
                   ? `${styles.sidebarMenuItemLink} d-flex align-items-start py-3 px-1 ${styles.pending}`

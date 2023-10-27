@@ -11,6 +11,7 @@ import Home from "./pages/Home/Home"
 import Sidebar from "./component/Sidebar/Sidebar"
 import Header from "./component/Header/Header"
 import Sections from "./pages/Sections/Sections"
+import News from "./pages/News/News"
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(false)
@@ -26,6 +27,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/:section" element={<Sections />} />
+              <Route path="/news" element={<News />} />
             </Routes>
           </div>
         </div>

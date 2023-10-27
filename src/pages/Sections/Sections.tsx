@@ -23,6 +23,7 @@ const Sections: React.FC = () => {
   const { section } = useParams<{ section: string }>()
   const sectionData = sectionDataMap[section as string]
   const { data, error } = useClimateData(sectionData.apiEndpoint)
+  
 
   return (
     <main className={`${styles.content} d-flex flex-column flex-lg-row p-4`}>

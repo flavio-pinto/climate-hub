@@ -1,17 +1,15 @@
-import { ListGroup } from "react-bootstrap";
-import useNewsData from "../../services/fetchNews";
-import styles from "./News.module.css";
-import { Link } from "react-router-dom";
-import { Article } from "../../interfaces/Article";
-import { FaNewspaper } from "react-icons/fa6";
-import { RingLoader } from "react-spinners";
+import { ListGroup } from "react-bootstrap"
+import useNewsData from "../../services/fetchNews"
+import styles from "./News.module.css"
+import { Link } from "react-router-dom"
+import { Article } from "../../interfaces/Article"
+import { FaNewspaper } from "react-icons/fa6"
+import { RingLoader } from "react-spinners"
 
-/* type Props = {} */
-
-const News: React.FC = (/* props: Props */) => {
-  const { news, error } = useNewsData();
-  const isViewportHigh = window.innerHeight >= 1200;
-  const displayedNews = isViewportHigh ? news.slice(0, 5) : news.slice(0, 3);
+const News: React.FC = () => {
+  const { news, error } = useNewsData()
+  const isViewportHigh = window.innerHeight >= 1200
+  const displayedNews = isViewportHigh ? news.slice(0, 5) : news.slice(0, 3)
 
   return (
     <main className={`${styles.news} p-4`}>
@@ -28,7 +26,7 @@ const News: React.FC = (/* props: Props */) => {
           )
         </small>
       </h2>
-      {error ? ( // Check if there is an error
+      {error ? (
         <div className={styles.errorContainer}>
           <p className={`${styles.errorText} d-block mx-auto my-5`}>
             The data retrieval encountered the following error: {error}
@@ -36,7 +34,7 @@ const News: React.FC = (/* props: Props */) => {
             Try Refreshing the page.
           </p>
         </div>
-      ) : news.length === 0 ? ( // Check if there are no news items
+      ) : news.length === 0 ? (
         <div className={styles.spinnerContainer}>
           <RingLoader
             className="d-block mx-auto my-5"
@@ -74,7 +72,7 @@ const News: React.FC = (/* props: Props */) => {
         Times!
       </a>
     </main>
-  );
-};
+  )
+}
 
-export default News;
+export default News

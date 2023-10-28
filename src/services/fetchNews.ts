@@ -24,7 +24,7 @@ const useNewsData = (): NewsResult => {
             abstract: el.abstract,
             url: el.url,
             byline: el.byline,
-          };
+          }
         }))
         setError(null)
       } catch (error: unknown) {

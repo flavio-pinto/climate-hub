@@ -41,14 +41,14 @@ const Sections: React.FC = () => {
             />
           </Col>
           <Col xs={12} className={`order 1 order-md-1 order-lg-2`}>
-            {error ? ( // Verifica se c'è un errore
+            {error ? (
               <div className="py-5">
                 <p className={styles.errorMsg}>
                   The data retrieval encountered an error. Please try refreshing
                   the page."
                 </p>
               </div>
-            ) : data ? ( // Se non c'è errore e ci sono dati, visualizza il grafico
+            ) : data ? (
               <>
                 {section === "temperature" && <TemperatureGraph data={data} />}
                 {section === "co2" && <Co2Graph data={data} />}
@@ -57,7 +57,6 @@ const Sections: React.FC = () => {
                 {section === "ice" && <ArticIceGraph data={data} />}
               </>
             ) : (
-              // Altrimenti, mostra lo spinner di caricamento
               <div className={styles.spinnerContainer}>
                 <RingLoader
                   className="d-block mx-auto my-5"

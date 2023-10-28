@@ -18,7 +18,7 @@ const useNewsData = (): NewsResult => {
 
       try {
         const response: AxiosResponse = await axios.get(url)
-        setNews(response.data.results.slice(0, 3).map((el: ArticleFromApi) => {
+        setNews(response.data.results.map((el: ArticleFromApi) => {
           return {
             title: el.title,
             abstract: el.abstract,

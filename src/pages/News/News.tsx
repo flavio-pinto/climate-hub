@@ -9,7 +9,7 @@ import { RingLoader } from "react-spinners"
 const News: React.FC = () => {
   const { news, error } = useNewsData()
   const isViewportHigh = window.innerHeight >= 1200
-  const displayedNews = isViewportHigh ? news.slice(0, 5) : news.slice(0, 3)
+  const displayedNews = isViewportHigh ? news.slice(0, 6) : news.slice(0, 3)
 
   return (
     <main className={`${styles.news} p-4`}>

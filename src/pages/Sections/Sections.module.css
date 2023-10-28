@@ -9,6 +9,10 @@
   width: calc(100vw - 20px);
 }
 
+.contentRow {
+  height: 100%;
+}
+
 .sectionImg {
   max-width: 100%;
   max-height: 300px;
@@ -22,5 +26,17 @@
 @media screen and (min-width: 992px) {
   .content {
     width: unset;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .content {
+    font-size: 30px;
+  }
+
+  .sectionImg {
+    height: 600px;
+    max-width: 100%;
+    max-height: 600px;
   }
 }

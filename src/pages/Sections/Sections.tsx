@@ -28,12 +28,12 @@ const Sections: React.FC = () => {
   return (
     <main className={`${styles.content} d-flex flex-column flex-lg-row p-4`}>
       <Container fluid>
-        <Row className="align-items-center">
-          <Col xs={12} lg={8} className={`${styles.contentDescription} order-0 order-md-0 order-lg-0`}>
+        <Row className={`${styles.contentRow} align-items-center`}>
+          <Col xs={12} lg={8} xxl={6} className={`${styles.contentDescription} order-0 order-md-0 order-lg-0`}>
             <h2>{sectionData.name}</h2>
             <p>{sectionData.description}</p>
           </Col>
-          <Col xs={12} lg={4} className="order-2 order-md-2 order-lg-1">
+          <Col xs={12} lg={4} xxl={6} className="order-2 order-md-2 order-lg-1">
             <img
               className={`${styles.sectionImg}`}
               src={sectionData.image}

@@ -4,7 +4,7 @@
   background-color: var(--bg-col-secondary);
   border-radius: 4px;
   color: var(--txt-col-secondary);
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   width: calc(100vw - 20px);
 }
@@ -29,7 +29,7 @@
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1920px) {
   .content {
     font-size: 30px;
   }

@@ -1,27 +1,36 @@
-# React + TypeScript + Vite
+# ClimateHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## What is ClimateHub?
+A dashboard for monitoring key indicators related to global warming provides a comprehensive visual representation of critical climate-related metrics. This tool allows users to track and analyze data on various aspects of global warming.
 
-Currently, two official plugins are available:
+## Live Demo
+You can see the live demo hosted on Netlify here: [ClimateHub](https://climatehub.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies and libraries
 
-## Expanding the ESLint configuration
+### Languages and libraries
+- HTML5
+- CSS3
+- TypeScript
+- React
+- React Bootstrap
+- React Router Dom
+- Axios
+- Vite
+- React Spinners
+- React Icons
+- React Helmet
+- React Toggle
+- Recharts
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
+- Graphs with climate data sourced from https://global-warming.org/ API
+- News about climate change
+- Sidebar with button to open/close it
+- Browse sections with different routes
+- Light/Dark mode
+- Responsive design for an optimized experience on different devices
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Contacts
+- **Website:** [My Website](#)
+- **LinkedIn:** [My LinkedIn Profile](#)

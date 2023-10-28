@@ -4,7 +4,7 @@
 A dashboard for monitoring key indicators related to global warming provides a comprehensive visual representation of critical climate-related metrics. This tool allows users to track and analyze data on various aspects of global warming.
 
 ## Live Demo
-You can see the live demo hosted on Netlify here: [ClimateHub](https://climatehub.netlify.app)
+You can see the live demo hosted on Netlify here: [ClimateHub](https://climate-hub.netlify.app/)
 
 ## Technologies and libraries
 

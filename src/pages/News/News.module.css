@@ -1,0 +1,44 @@
+.news {
+  min-height: calc(100% - 90px);
+  margin: 10px;
+  background-color: var(--bg-col-secondary);
+  border-radius: 4px;
+  color: var(--txt-col-secondary);
+  width: calc(100vw - 20px);
+}
+
+.news h2 small a:hover {
+  color: gold;
+}
+
+.newsContentItem,
+.more,
+.news h2 small a {
+  color: var(--txt-col-secondary);
+}
+
+.newsContentItem:hover,
+.more:hover {
+  opacity: .8;
+}
+
+.newsContentItem {
+  text-decoration: none;
+}
+
+.newsContentItem small {
+  font-style: italic;
+}
+
+.more {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 992px) {
+  .news {
+    width: unset;
+  }
+}

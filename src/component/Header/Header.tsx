@@ -59,10 +59,10 @@ const Header: React.FC<Props> = (props: Props) => {
         >
           <BsGithub />
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="ms-2 ms-md-3">
+        <a href="https://www.linkedin.com/in/flaviopinto-dev/" target="_blank" rel="noopener noreferrer" className="ms-2 ms-md-3">
           <BsLinkedin />
         </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" className="ms-2 ms-md-3">
+        <a href="https://flavio-pinto.github.io/portfolio/" target="_blank" rel="noopener noreferrer" className="ms-2 ms-md-3">
           <BsCodeSquare />
         </a>
       </div>
